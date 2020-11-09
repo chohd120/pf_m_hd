@@ -1,0 +1,417 @@
+@charset "utf-8";
+
+
+/* header */
+#header {
+    height: 110px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 9999;
+    background: #fff;
+    
+}
+#header .t_menu{ 
+    display:flex; 
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 3px 3px #555;
+}
+#header .t_menu .logo {
+  padding: 0 150px;
+}
+
+
+
+/* 한줄광고 상단으로 슬라이드 */
+.main_noti {
+    margin-top: 2px;
+    width: 100%;
+    background: rgb(26, 46, 114); 
+    color:#fff;
+    padding:0 20px;
+    background-size:60px auto;
+    height: 40px;
+    overflow: hidden;
+    box-shadow: 0 3px 3px #888;
+}
+.main_noti a { 
+    padding-left:35px ;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+}
+
+/* container */
+#container {
+    padding-top: 100px;
+}
+
+.slideBox {
+  height: 530px;
+}
+
+/* slick-slide */
+.slideInner {
+    width: 768px;
+    height: 500px;
+    /* overflow: hidden; */
+  }
+  
+  .slideInner .slide {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+  }
+  .slideInner .slide .text {
+    font-size: 30px;
+    font-style: italic;
+    position: absolute;
+  }
+  .slideInner .slide .text h1{
+    transition: all 0.5s;
+  }
+  .slideInner .slide .text:hover h1 {
+    transform: scale(1.1);
+  }
+  .slideInner .slide .btn {
+    position: absolute; 
+  }
+  .slideInner .slide .btn button {
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3em;
+    padding: 5px 10px;
+    background: none;
+    transition: all 0.5s;
+  }
+  .slideInner .slide .btn:hover button{
+    background: #000;
+    color: #fff;
+    border: none;
+    opacity: 0.6;
+  }
+  .slideInner .slide1>.text{
+    bottom: 20%;
+    right:12%;
+    color:#fff;
+    text-shadow: 1px 1px 2px #000 ;
+  }
+  .slideInner .slide1 >.btn {
+    top: 85%;
+    right:10%;
+  }
+  .slideInner .slide1 >.btn button {
+      color: #fff;
+      border: 1px solid #fff;
+  }
+  .slideInner .slide2 >.text{
+    top: 10%;
+    right:10%;
+    color: rgb(1, 83, 160);
+    text-shadow: 1px 1px 2px #000 ;
+  }
+  .slideInner .slide2 >.btn {
+    top: 20%;
+    right:10%;
+  }
+  .slideInner .slide2 >.btn button {
+      color: rgb(1, 83, 160);
+      border: 1px solid  rgb(1, 83, 160);
+  }
+  .slideInner .slide3 >.text{
+    top: 8%;
+    left:10%;
+    color: lemonchiffon;
+    text-shadow: 1px 1px 2px #000 ;
+  }
+  .slideInner .slide3 >.btn {
+    top: 30%;
+    left:10%;
+  }
+  .slideInner .slide3 >.btn button {
+      color:lemonchiffon;
+      border: 1px solid lemonchiffon; 
+  }
+  .slideInner .slide3 >.text h1 span {
+    display: block;
+    padding-top: 5px;
+    font-size: 18px;
+    text-decoration: line-through;
+}
+  .slideInner .slide1 {
+    background-image: url(../images/hummer.jpg);
+    background-position: top;
+  }
+.slideInner .slide2 {
+    background-image: url(../images/gtx.jpg);
+    background-position: left;
+  }
+.slideInner .slide3 {
+    background-image: url(../images/bmc1.jpg);
+  }
+
+  .slideInner .slide.slick-active {
+    animation: zoomOutmain 3s both;
+  }
+  
+  /* Zooming exits */
+  @-webkit-keyframes zoomOutmain {
+    from {
+      opacity: 1;
+      -webkit-transform: scale3d(1.2, 1.2, 1.2);
+      transform: scale3d(1.2, 1.2, 1.2);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+  }
+  
+  @keyframes zoomOutmain {
+    from {
+      opacity: 1;
+      webkit-transform: scale3d(1.2, 1.2, 1.2);
+      transform: scale3d(1.2, 1.2, 1.2);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+  }
+
+
+
+/* 화살표 버튼 */
+.slideOuter .marrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: navy;
+    background: none;
+    border: none;
+  }
+  
+  .slideOuter .prevArrow {
+    left: 10%;
+    z-index: 9999999;
+  }
+  
+  .slideOuter .nextArrow {
+    right: 10%;
+  }
+  
+  /* 도트 버튼 */
+  .slideOuter .slick-dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .slideOuter .slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+    
+  }
+  
+  .slideOuter .slick-dots li button {
+    width: 50px;
+    height: 5px;
+    background: #777;
+    border: 1px solid #fff;
+    border: none;
+    color: transparent;
+    overflow: hidden;
+  }
+  
+  .slideOuter .slick-dots li.slick-active button {
+    background: navy;
+  }
+
+
+  /* vehicles */
+.vehicleBox {
+  height: 500px;
+}
+.car h1 {
+    padding: 0px 0 5px 20px;
+    font-size: 30px;
+    font-style: italic;
+}
+.ram, .raptor, .rubicon, .hummer {
+  margin: 5px 5px;
+  float: left;
+  width: 48.5%;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 2px red;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: all 0.5s;
+}
+.ram:hover .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+.raptor:hover .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+.rubicon:hover .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+.hummer:hover .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+.carArea li {
+  transition: all 0.5s;
+}
+.carArea li:hover a {
+  transform: scale(1.1);
+}
+.carArea li a {
+  width: 360px;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.carArea .ram {
+    background-image: url(../images/ram1.jpg);
+}
+.carArea .raptor {
+    background-image: url(../images/raptor1.jpg);
+}
+.carArea .rubicon {
+    background-image: url(../images/rubicon1.jpeg);
+}
+.carArea .hummer {
+    background-image: url(../images/hummer1.jpg);
+}
+
+ 
+
+/* footer */
+#footer {
+  background-color: #444;
+  text-align: center;
+  height: 2000px;
+}
+.signup, .follow, .copyright {
+  padding-top: 20px ;
+  border-bottom: 0.5px dashed #999;
+}
+.signup h2, .follow h2 {
+  font-size: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.signup p {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: lighter;
+  color: rgb(200, 200, 200);
+}
+.signup p span{
+  color: navy;
+  font-weight: bold;
+}
+.signup a {
+  display: block;
+  font-weight: bold;
+  margin: 20px 250px;
+  padding: 10px 0;
+  border: 2px solid navy;
+  border-radius: 5em;
+  color: #fff;
+  background: #000;
+}
+.follow span {
+  text-shadow: 2px 2px 4px #000;
+}
+.follow .sns {
+  height: 110px;
+}
+.follow .sns a {
+  float: left;
+  width: 20%;
+}
+.follow .sns img{
+  padding: 0 5px;
+  border-radius: 2em;
+}
+.copyright {
+  padding-top: 20px;
+}
+.copyright .cr_logo {
+  float: left;
+  width: 20%;
+}
+.copyright .cr_text {
+  color: #fff;
+  float: left;
+  text-align: left;
+}
+/* quick_area */
+#quick_area {
+  display: none;
+}
+#quick_area .q_menu { 
+    display:flex; 
+}
+#quick_area .quick_wrap {
+    height: 50px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 99999;
+    background:rgb(26, 46, 114);
+    color: #fff;
+}
+#quick_area .quick_wrap a { 
+    display:block; 
+    width:25%;     
+    border-right: 1px solid #777; 
+    margin: 18px 0; 
+    text-align:center;
+    font-size: 14px; 
+    }
+
+/* 768 이상 화면 */
+#mobileOnly {
+        position:fixed; width:100vw; height:100vh; z-index:9999999999;
+        background:#4ab8bc; top:0; font-size:30px; display:flex;
+        justify-content: center; align-items:center;
+    }
+@media screen and (max-width: 768px) {
+    #mobileOnly {
+        display: none;
+    }
+}
+
+.btn {
+  
+}
